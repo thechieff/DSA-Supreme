@@ -1,0 +1,27 @@
+//Java solution on Leetcode
+
+class Solution {
+    public int findDuplicate(int[] nums) {
+
+        //1st method
+        //first sort and then find the duplicate by comparing adjacent elements
+
+        //2nd method (Visited method)
+        for(int i=0; i<nums.length; i++){
+            int index = Math.abs(nums[i]);
+            if(nums[index] < 0){
+                return index;
+            }
+            nums[index] *= -1;
+        }
+
+        //3rd method
+        // while(nums[0] != nums[nums[0]]){
+        //     int temp = nums[0];
+        //     nums[0] = nums[nums[0]];
+        //     nums[nums[0]] = temp;
+        // }
+        // return nums[0];
+        return 0;
+    }
+}
